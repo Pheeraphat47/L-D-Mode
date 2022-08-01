@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+
+/* สร้างตัวแปร */
+:root {
+    /* light mode */
+    --primary-color: rgb(255, 92, 92);
+    --text-color: rgb(66, 66, 66);
+    --text-color-second: rgba(66, 66, 66, 0.7);
+    --background: rgb(255, 255, 255);
+    --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode */
+[data-theme="dark"]{
+    --primary-color: orange;
+    --text-color: white;
+    --text-color-second: rgba(255, 255, 255, 0.8);
+    --background: #121213;    
+}
+
+*{
+    font-family: 'Mitr', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* กดลิ้งแล้วลื่นขึ้น */
+}
+body {
+    background-color: var(--background);    
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffa500' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    color: var(--text-color);
+    margin: 0;
+}
+
+h1{
+    font-size: 100px;
+    margin-bottom: 0;
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h4{
+    color: var(--text-color-second);
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+}
+
+.title-group{
+    text-align: center;
+}
+
+/* nav bar */
+nav{
+    position: fixed;
+    z-index: 10;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 25px;
+    width: 100vw;
+}
+
+a{
+    margin-right: 25px;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+}
+
+/* วางเมาส์ */
+a:hover,a:focus{
+    color: var(--text-color);
+    border-bottom: 3px solid;
+}
+
+/* switch L/D mode */
+.theme-switch-container{
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+    right:25px;
+    top: 30px;
+}
+
+.theme-switch-container span{
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.toggle-text{
+    position: relative;
+    top: -4px;
+    right: 5px;
+    color: var(--text-color);
+}
+
+.theme-switch{
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input{
+    display: none;
+}
+
+/* ปุ่มเปิดปิด */
+
+.slider{
+    background: var(--primary-color);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.slider::before{
+    background: #fff;
+    content: "";
+    bottom: 4px;
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+
+}
+
+input:checked +.slider::before{
+    transform: translateX(26px);
+}
+
+.slider.round{
+    border-radius: 34px;
+}
+
+.slider::before{
+    border-radius: 50%;
+}
+
+.fas{
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+
+.fab{
+    font-size: 80px;
+    margin-right: 50px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.fab:hover{
+    color: var(--text-color);
+}
+
+.project-container{
+    display: flex;
+}
+
+.image-container{
+    border: 1px solid  var(--text-color-second);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    background: var(--background);
+    margin-right:25px;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
